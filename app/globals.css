@@ -1,26 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-primary: #368F8B;
+  --color-secondary: #212529;
+  --color-background2: #04080F;
+  --color-white: #f8f9fa;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  @apply bg-secondary text-white;
+}
+ 
+.bg-custom {
+  background-image: url("D:\GitHub\hamid-usman\public\WhatsApp Image 2025-05-30 at 19.02.11_e8440328.jpg"); /* Replace with your image path */
+  background-size:contain; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
 }
