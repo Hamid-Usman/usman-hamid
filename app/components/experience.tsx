@@ -17,7 +17,7 @@ export const Experience = ({title, organization, start, end, remarks}: Experienc
             exit="exit"
             className="flex gap-3">
             <div className="h-fit w-fit flex flex-col items-center">
-                <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
+                <div className={` border-primary border-4 rounded-full p-2 w-fit ${end === "Present" ? "animate-ping" : ""} `}></div>
                 <div className="min-h-full w-[2px] bg-primary"></div>
             </div>
             <div className="flex flex-col gap-1">

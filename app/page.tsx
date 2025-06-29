@@ -25,8 +25,8 @@ export default function Home() {
                 </motion.div>
             </div>
             
-            <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:p-20">
-                <h3 className="text-2xl font-bold">Projects</h3>
+            <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:py-20 sm:px-20 lg:px-0">
+                <h3 className="text-2xl font-bold lg:pl-20">Projects</h3>
                 <div className="flex justify-center flex-wrap gap-4 px-2">
                     <Project 
                         photo={photo}
@@ -61,19 +61,20 @@ export default function Home() {
             <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Work Experience</h3>
                 <div className="h-full flex flex-col md:flex-row gap-5 justify-start">
+                    
+                    <Experience 
+                        title='Frontend Developer'
+                        organization='ProjectGenius '
+                        start='Nov 2024'
+                        end='Present'
+                        remarks={["Designed the frontend page from the ground up", "Handled all API integration", "Worked with zustand and react-query, to optize site performance 40%"]}
+                    />
                     <Experience 
                         title='Backend Developer'
                         organization='Pistis TechHub'
                         start='Nov 2023'
                         end='April 2024'
                         remarks={["Developed the endpont for projects", "Worked on the user dashboard and managed the stats and included pagination"]}
-                    />
-                    <Experience 
-                        title='Frontend Developer'
-                        organization='ProjectGenius '
-                        start='Nov 2024'
-                        end='Present'
-                        remarks={["Designed the frontend page from the ground up", "Handled all API integration", "Worked with zustand and react-query, Optizing the site performance by 40%"]}
                     />
 
                 </div>

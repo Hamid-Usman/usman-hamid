@@ -19,11 +19,11 @@ export const Project = ({photo, project, description, site, github, delay = 0}: 
             initial='initial'
             whileInView="animate"
             exit="exit"
-        className="w-full h-[120vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
+        className="w-full h-[108vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
             <div className="bg-white w-full h-fit">
                 <div className="bg-primary w-20 h-1"></div>
             </div>
-            <div className="rounded-lg transition duration-500 ease-in-out w-full sm:w-[320px] overflow-hidden h-full relative group">
+            <div className="rounded-lg transition duration-500 ease-in-out w-full sm:w-[320px] lg:full overflow-hidden h-full relative group">
                 <Image
                     className="w-full h-full hover:scale-125 transition duration-500 ease-in-out"
                     src={photo}
