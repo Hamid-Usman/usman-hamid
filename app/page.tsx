@@ -4,10 +4,17 @@ import photo from '../public/pgng.png'
 import { Experience } from './components/experience';
 import { Project } from "./components/projects";
 import { motion } from 'framer-motion';
+import { Header } from './components/headers';
+import { Skillset } from './components/skillset';
+import { RiRobot2Fill } from 'react-icons/ri';
+import { FaCode, FaGithub, FaLinkedin, FaPhoneFlip, FaServer, FaX } from 'react-icons/fa6';
+import { SiPostman, SiScrapy, SiTailwindcss } from 'react-icons/si';
+import { IoMailUnreadSharp, IoShareSocial } from 'react-icons/io5';
+import Link from 'next/link';
 export default function Home() {
     return (
         <>
-            <div
+            <section id='home'
                 className="bg-gradient-to-b to-background2 flex flex-col justify-center min-h-screen py-8 px-2 pb-20 gap-2 sm:p-20"
             >
                 <motion.div 
@@ -18,16 +25,16 @@ export default function Home() {
                     
                     className='flex flex-col gap-2'>
                     
-                    <p className="text-xl font-semibold">Hello, I&apos;m Hamid</p>
-                    <h1 className="text-4xl font-extrabold">A <span className="text-primary">Fullstack</span> Developer</h1>
-                    <p className=" text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo molestias vel autem mollitia fugit dolores praesentium similique corporis odit, sunt quaerat soluta ipsam, facilis aliquam error aperiam sequi voluptates natus!</p>
-                    <a href="/files/Usman Abdulhamid.docx" download className="w-fit hover:bg-gradient-to-r hover:to-background2 transition duration-500 ease-in-out px-6 py-[10px] rounded-sm bg-primary">Download CV</a>
+                    <p className="text-xl md:text-2xl font-semibold">Hallo, I&apos;m Hamid</p>
+                    <h1 className="text-4xl md:text-6xl font-extrabold">A <span className="bg-gradient-to-r from-primary to-primary-fade bg-clip-text text-transparent">Fullstack</span> Developer</h1>
+                    <p className=" text-lg">I am a fullstack developer with over 4 years of building and maintaining scalable web applications across both frontend and backend technologies.</p>
+                    <a href="/files/Usman Abdulhamid.docx" download className="hover:shadow-md shadow-primary-fade w-fit px-6 py-[10px] rounded-md hover:bg-gradient-to-r active:bg-gradient-to-r active:to-background2 hover:to-background2 transition duration-500 ease-in-outrounded-sm bg-primary">Download CV</a>
                 </motion.div>
-            </div>
+            </section>
             
-            <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:py-20 sm:px-20 lg:px-0">
-                <h3 className="text-2xl font-bold lg:pl-20">Projects</h3>
-                <div className="flex justify-center flex-wrap gap-4 px-2">
+            <section id='projects' className="w-full bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:py-20 sm:px-20 lg:px-20">
+                <Header heading={"Recent Projects"}/>
+                <div className="flex justify-center flex-wrap gap-2">
                     <Project 
                         photo={photo}
                         project="Project Genius"
@@ -35,30 +42,11 @@ export default function Home() {
                         site="https://www.projectgenius.com.ng/"
                         delay={0.2 * 0}
                     />
-                    <Project 
-                        photo={photo}
-                        project="Project Genius"
-                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
-                        site="https://www.projectgenius.com.ng/"
-                        delay={0.2 * 1}/>
-                    <Project 
-                        photo={photo}
-                        project="Project Genius"
-                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
-                        site="https://www.projectgenius.com.ng/"
-                        delay={0.2 * 2}/>
-                    <Project 
-                        photo={photo}
-                        project="Project Genius"
-                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
-                        site="https://www.projectgenius.com.ng/"
-                        delay={0.2 * 3}
-                    />
                 </div>
 
             </section>
 
-            <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
+            <section id='experience' className="bg-radial-[at_20%_25%]  to-50% from-secondary to-background2 flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Work Experience</h3>
                 <div className="h-full flex flex-col md:flex-row gap-5 justify-start">
                     
@@ -67,7 +55,7 @@ export default function Home() {
                         organization='ProjectGenius '
                         start='Nov 2024'
                         end='Present'
-                        remarks={["Designed the frontend page from the ground up", "Handled all API integration", "Worked with zustand and react-query, to optize site performance 40%"]}
+                        remarks={["Designed the frontend page from the ground up", "Handled all API integration", "Worked with zustand and react-query to optimize site performance by 40%"]}
                     />
                     <Experience 
                         title='Backend Developer'
@@ -79,28 +67,79 @@ export default function Home() {
 
                 </div>
             </section>
-            <section className="bg-background2 flex flex-col min-h-fit py-8 px-2 pb-20 gap-2 sm:p-20">
+            <section id='skillset' className="bg-background2 flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
+                <Header 
+                    heading="Skill Set"
+                />
+                <div className="h-full grid place-content-center lg:grid-cols-3 gap-5">
+                    
+                    <Skillset
+                        tech='Fullstack Development'
+                        description='NextJS | Django REST | TypeScript | Python'
+                        // delay={0.2 * 0}
+                        icon={FaCode}
+                    />
+                    <Skillset
+                        tech='AI Integration'
+                        description='LangChain | Ollama | Mistral'
+                        // delay={0.2 *1}
+                        icon={RiRobot2Fill}
+                    />
+                    <Skillset
+                        tech='Web Scraping'
+                        description='Scrapy | Selenium'
+                        // delay={0.2 * 2}
+                        icon={SiScrapy}
+                    />
+                    <Skillset
+                        tech='API Documentation'
+                        description='Postman'
+                        // delay={0.2 * 3}
+                        icon={SiPostman}
+                    />
+                    <Skillset
+                        tech='Responsive Design'
+                        description='Tailwind | FramerMotion'
+                        // delay={0.2 * 4}
+                        icon={SiTailwindcss}
+                    />
+                    <Skillset
+                        tech='Hosting Services'
+                        description='Supabase | Vercel | Render'
+                        // delay={0.2 * 5}
+                        icon={FaServer}
+                    />
+
+                </div>
+            </section>
+            <section id='contact' className="bg-background2 flex flex-col min-h-fit py-8 px-2 pb-20 gap-2 sm:p-20">
                 <h3 className="text-2xl font-bold">Contact Me</h3>
                 <div className="h-full grid md:grid-cols-2 gap-2">
-                    <div className="bg-secondary p-4 w-full">
+                    <div className="bg-secondary flex gap-3 items-start p-4 w-full">
+                        <IoMailUnreadSharp className='text-primary-fade' size={40}/>
                         <div className="flex flex-col gap-4">
                             <h4 className="text-xl font-bold">Email</h4>
                             <a href="" className="">abdulhamidusman218@gmail.com</a>
                         </div>
                     </div>
-                    <div className="bg-secondary p-4 w-full">
+                    <div className="bg-secondary flex gap-3 items-start p-4 w-full">
+                        <FaPhoneFlip className='text-primary-fade' size={40}/>
                         <div className="flex flex-col gap-4">
                             <h4 className="text-xl font-bold">Phone Number</h4>
                             <a href="" className="">+2348160803194</a>
                         </div>
                     </div>
                     <div className="bg-secondary p-4 w-full">
-                        <div className="flex flex-col gap-4">
-                            <h4 className="text-xl font-bold">Online Handles</h4>
-                            <div className="flex gap-2">
-                                <a href="" className="">Github</a>
-                                <a href="" className="">X</a>
-                                <a href="" className="">LinkedIn</a>
+                        <div className="flex gap-4">
+                            <IoShareSocial className='text-primary-fade' size={40}/>
+                            <div className='flex flex-col gap-4'>
+                                
+                                <h4 className="text-xl font-bold">Online Handles</h4>
+                                <div className="flex gap-3">
+                                    <a href="" className=""><FaGithub size={25}/> </a>
+                                    <a href="" className=""><FaLinkedin size={25} /></a>
+                                    <Link href="mailto:abdulhamidusman218@gmail.com" className=""><FaX size={25} /></Link>
+                                </div>
                             </div>
                         </div>
                     </div>

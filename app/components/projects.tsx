@@ -30,14 +30,14 @@ export const Project = ({photo, project, description, site, github, delay = 0}: 
                     alt=""
                 />
 
-                <div className="absolute inset-0 flex gap-2 p-2 flex-col justify-end bg-gradient-to-t from-black to-transparent bg-opacity-60 opacity-0 group-hover:opacity-80 transition-opacity duration-500">
-                    
-                    <span className="text-white text-2xl font-bold">{project}</span>
-                    <span className="text-white text-sm">{description}</span>
+                <div className="absolute inset-0 flex gap-2 p-2 flex-col justify-end bg-gradient-to-t from-black to-transparent bg-opacity-60 group-hover:opacity-80 transition-opacity duration-500">
                     <div className="flex gap-2">
-                        <Link href={site}>Site</Link>
+                        <Link href={site}>View Site</Link>
                         {github && <Link href={github}>GitHub</Link>}
                     </div>
+                    <span className="text-white text-2xl font-bold">{project}</span>
+                    <span className="text-white text-sm">{description}</span>
+                    
 
                 </div>
             </div>
