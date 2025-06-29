@@ -1,17 +1,29 @@
+"use client"
+import { slideRight } from '@/motion/variants/slideRight';
 import photo from '../public/pgng.png'
+import { Experience } from './components/experience';
 import { Project } from "./components/projects";
-
+import { motion } from 'framer-motion';
 export default function Home() {
     return (
         <>
-            <section
+            <div
                 className="bg-gradient-to-b to-background2 flex flex-col justify-center min-h-screen py-8 px-2 pb-20 gap-2 sm:p-20"
             >
-                <p className="text-xl font-semibold">Hello, I&apos;m Hamid</p>
-                <h1 className="text-4xl font-extrabold">A <span className="text-primary">Fullstack</span> Developer</h1>
-                <p className=" text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo molestias vel autem mollitia fugit dolores praesentium similique corporis odit, sunt quaerat soluta ipsam, facilis aliquam error aperiam sequi voluptates natus!</p>
-                <a href="/files/Usman Abdulhamid.docx" download className="w-fit hover:bg-gradient-to-r hover:to-background2 transition duration-500 ease-in-out px-6 py-[10px] rounded-sm bg-primary">Download CV</a>
-            </section>
+                <motion.div 
+                    initial = {slideRight.initial}
+                    whileInView = {slideRight.animate}
+                    exit = {slideRight.exit}
+                    transition={slideRight.transition}
+                    
+                    className='flex flex-col gap-2'>
+                    
+                    <p className="text-xl font-semibold">Hello, I&apos;m Hamid</p>
+                    <h1 className="text-4xl font-extrabold">A <span className="text-primary">Fullstack</span> Developer</h1>
+                    <p className=" text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo molestias vel autem mollitia fugit dolores praesentium similique corporis odit, sunt quaerat soluta ipsam, facilis aliquam error aperiam sequi voluptates natus!</p>
+                    <a href="/files/Usman Abdulhamid.docx" download className="w-fit hover:bg-gradient-to-r hover:to-background2 transition duration-500 ease-in-out px-6 py-[10px] rounded-sm bg-primary">Download CV</a>
+                </motion.div>
+            </div>
             
             <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Projects</h3>
@@ -21,24 +33,26 @@ export default function Home() {
                         project="Project Genius"
                         description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
                         site="https://www.projectgenius.com.ng/"
+                        delay={0.2 * 0}
                     />
                     <Project 
                         photo={photo}
                         project="Project Genius"
                         description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
                         site="https://www.projectgenius.com.ng/"
-                    />
+                        delay={0.2 * 1}/>
                     <Project 
                         photo={photo}
                         project="Project Genius"
                         description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
                         site="https://www.projectgenius.com.ng/"
-                    />
+                        delay={0.2 * 2}/>
                     <Project 
                         photo={photo}
                         project="Project Genius"
                         description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
                         site="https://www.projectgenius.com.ng/"
+                        delay={0.2 * 3}
                     />
                 </div>
 
@@ -47,36 +61,20 @@ export default function Home() {
             <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Work Experience</h3>
                 <div className="h-full flex flex-col gap-5 justify-start">
-                    <div className="flex gap-3">
-                        <div className="h-fit w-fit flex flex-col items-center">
-                            <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
-                            <div className="min-h-full w-[2px] bg-primary"></div>
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <h4 className="text-xl flex flex-col items-start">Backend Developer</h4>
-                            <p className="italic font-bold">Pistis TechHub <span className="font-normal">Nov 2023 - April 2024</span></p>
-                            <ul className="ml-7">
-                                <li className=" decoration-dashed decoration-white list-disc" >Developed the the endpont projects</li>
-                                <li className=" decoration-dashed decoration-white list-disc" >Worked on the user dashboard and managed the stats and included pagination</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="flex gap-3">
-                        <div className="h-fit w-fit flex flex-col items-center">
-                            <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
-                            <div className="min-h-full w-[2px] bg-primary"></div>
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <h4 className="text-xl flex flex-col items-start">Frontend Developer</h4>
-                            <p className="italic font-bold">ProjectGenius <span className="font-normal">Nov 2023 - April 2024</span></p>
-                            <ul className="ml-7">
-                                <li className="decoration-white list-disc" >Designed the frontend page from the ground up</li>
-                                <li className="decoration-white list-disc" >Handled all API integration</li>
-                                <li className="decoration-white list-disc" >Worked with zustand and react-query, Optizing the site performance by 40%</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <Experience 
+                        title='Backend Developer'
+                        organization='Pistis TechHub'
+                        start='Nov 2023'
+                        end='April 2024'
+                        remarks={["Developed the endpont for projects", "Worked on the user dashboard and managed the stats and included pagination"]}
+                    />
+                    <Experience 
+                        title='Frontend Developer'
+                        organization='ProjectGenius '
+                        start='Nov 2024'
+                        end='Present'
+                        remarks={["Designed the frontend page from the ground up", "Handled all API integration", "Worked with zustand and react-query, Optizing the site performance by 40%"]}
+                    />
 
                 </div>
             </section>

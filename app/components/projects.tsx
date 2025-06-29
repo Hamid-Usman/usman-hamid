@@ -1,3 +1,7 @@
+
+import { slideStaggered } from "@/motion/variants/slideStaggered";
+import { motion } from "framer-motion";
+import { tr } from "framer-motion/client";
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link";
 
@@ -7,10 +11,17 @@ interface ProjectProps {
     description: string;
     site: string;
     github?: string;
+    delay?: number
 }
-export const Project = ({photo, project, description, site, github}: ProjectProps) => {
+export const Project = ({photo, project, description, site, github, delay = 0}: ProjectProps) => {
     return (
-        <div className="w-full h-[120vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
+        <motion.div 
+            variants={slideStaggered(delay)}
+            initial='initial'
+            whileInView="animate"
+            exit="exit"
+            viewport={{ once: true }}
+        className="w-full h-[120vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
             <div className="bg-white w-full h-fit">
                 <div className="bg-primary w-20 h-1"></div>
             </div>
@@ -32,6 +43,6 @@ export const Project = ({photo, project, description, site, github}: ProjectProp
 
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
