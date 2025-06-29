@@ -1,7 +1,6 @@
 
 import { slideStaggered } from "@/motion/variants/slideStaggered";
 import { motion } from "framer-motion";
-import { tr } from "framer-motion/client";
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link";
 
