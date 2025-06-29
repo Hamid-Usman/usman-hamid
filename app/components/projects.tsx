@@ -1,0 +1,37 @@
+import Image, { StaticImageData } from "next/image"
+import Link from "next/link";
+
+interface ProjectProps {
+    photo: string | StaticImageData;
+    project: string;
+    description: string;
+    site: string;
+    github?: string;
+}
+export const Project = ({photo, project, description, site, github}: ProjectProps) => {
+    return (
+        <div className="w-full h-[120vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
+            <div className="bg-white w-full h-fit">
+                <div className="bg-primary w-20 h-1"></div>
+            </div>
+            <div className="rounded-lg transition duration-500 ease-in-out w-full sm:w-[320px] overflow-hidden h-full relative group">
+                <Image
+                    className="w-full h-full hover:scale-125 transition duration-500 ease-in-out"
+                    src={photo}
+                    alt=""
+                />
+
+                <div className="absolute inset-0 flex gap-2 p-2 flex-col justify-end bg-gradient-to-t from-black to-transparent bg-opacity-60 opacity-0 group-hover:opacity-80 transition-opacity duration-500">
+                    
+                    <span className="text-white text-2xl font-bold">{project}</span>
+                    <span className="text-white text-sm">{description}</span>
+                    <div className="flex gap-2">
+                        <Link href={site}>Site</Link>
+                        {github && <Link href={github}>GitHub</Link>}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    )
+}

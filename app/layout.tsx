@@ -27,7 +27,7 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-            <header className="bg-background2 fixed w-full flex justify-between items-center px-3 py-6">
+            <header className="z-20 bg-background2 fixed w-full flex justify-between items-center px-3 py-6">
                 <h3 className="text-2xl font-bold">Hamid</h3>
                 <nav>
                     <ul className="flex gap-2">

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import photo from '../public/WhatsApp Image 2025-05-30 at 19.02.11_e8440328.jpg'
-import Link from "next/link";
+import photo from '../public/pgng.png'
+import { Project } from "./components/projects";
+
 export default function Home() {
     return (
         <>
@@ -10,55 +10,72 @@ export default function Home() {
                 <p className="text-xl font-semibold">Hello, I&apos;m Hamid</p>
                 <h1 className="text-4xl font-extrabold">A <span className="text-primary">Fullstack</span> Developer</h1>
                 <p className=" text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo molestias vel autem mollitia fugit dolores praesentium similique corporis odit, sunt quaerat soluta ipsam, facilis aliquam error aperiam sequi voluptates natus!</p>
-                <button className="w-fit hover:bg-gradient-to-r hover:to-background2 transition duration-500 ease-in-out px-6 py-[10px] rounded-sm bg-primary">Download CV</button>
+                <a href="/files/Usman Abdulhamid.docx" download className="w-fit hover:bg-gradient-to-r hover:to-background2 transition duration-500 ease-in-out px-6 py-[10px] rounded-sm bg-primary">Download CV</a>
             </section>
             
-            <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-2 sm:p-20">
+            <section className=" bg-background2 flex flex-col  py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Projects</h3>
-                <div className="flex justify-center flex-wrap gap-4">
-                    <div className="w-fit h-[480px] flex flex-col">
-                        <div className="bg-white w-full h-fit">
-                            <div className="bg-primary w-20 h-1"></div>
-                        </div>
-                        <div className="w-full sm:w-[280px] overflow-hidden h-fit">
-                            
-                            <Image className="w-[330px] h-fit hover:ba hover:scale-125 transition duration-500 ease-in-out" src={photo} alt=""  />
-                        </div>
-                        {/* <div>
-                            <span className="border-primary border-2 text-primary px-3 py-1 rounded-md">NextJS</span>
-                        </div> */}
-                    </div>
+                <div className="flex justify-center flex-wrap gap-4 px-2">
+                    <Project 
+                        photo={photo}
+                        project="Project Genius"
+                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
+                        site="https://www.projectgenius.com.ng/"
+                    />
+                    <Project 
+                        photo={photo}
+                        project="Project Genius"
+                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
+                        site="https://www.projectgenius.com.ng/"
+                    />
+                    <Project 
+                        photo={photo}
+                        project="Project Genius"
+                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
+                        site="https://www.projectgenius.com.ng/"
+                    />
+                    <Project 
+                        photo={photo}
+                        project="Project Genius"
+                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
+                        site="https://www.projectgenius.com.ng/"
+                    />
                 </div>
 
             </section>
 
-            <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-2 sm:p-20">
+            <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Work Experience</h3>
-                <div className="h-full flex gap-2 justify-start">
-                    <div className="h-fit w-fit flex flex-col items-center">
-                        <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
-                        <div className="min-h-full w-[2px] bg-primary"></div>
+                <div className="h-full flex flex-col gap-5 justify-start">
+                    <div className="flex gap-3">
+                        <div className="h-fit w-fit flex flex-col items-center">
+                            <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
+                            <div className="min-h-full w-[2px] bg-primary"></div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <h4 className="text-xl flex flex-col items-start">Backend Developer</h4>
+                            <p className="italic font-bold">Pistis TechHub <span className="font-normal">Nov 2023 - April 2024</span></p>
+                            <ul className="ml-7">
+                                <li className=" decoration-dashed decoration-white list-disc" >Developed the the endpont projects</li>
+                                <li className=" decoration-dashed decoration-white list-disc" >Worked on the user dashboard and managed the stats and included pagination</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="flex flex-col gap-1">
-                        <h4 className="text-xl flex flex-col items-start">Backend Developer</h4>
-                        <p className="italic font-bold">Pistis TechHub <span className="font-normal">Nov 2023 - April 2024</span></p>
-                        <ul>
-                            <li className=" decoration-dashed decoration-white" >- Developed the the endpont projects</li>
-                            <li className=" decoration-dashed decoration-white" >- Worked on the user dashboard and managed the stats and included pagination</li>
-                        </ul>
-                    </div>
-                    <div className="h-fit w-fit flex flex-col items-center">
-                        <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
-                        <div className="min-h-full w-[2px] bg-primary"></div>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <h4 className="text-xl flex flex-col items-start">Frontend Developer</h4>
-                        <p className="italic font-bold">ProjectGenius <span className="font-normal">Nov 2023 - April 2024</span></p>
-                        <ol>
-                            <li className=" decoration-white" >- Designed the frontend page from the ground up</li>
-                            <li className=" decoration-white" >- Handled all API integration</li>
-                            <li className=" decoration-dashed decoration-white" >- Worked with zustand and react-query, Optizing the site performance by 40%</li>
-                        </ol>
+
+                    <div className="flex gap-3">
+                        <div className="h-fit w-fit flex flex-col items-center">
+                            <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
+                            <div className="min-h-full w-[2px] bg-primary"></div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <h4 className="text-xl flex flex-col items-start">Frontend Developer</h4>
+                            <p className="italic font-bold">ProjectGenius <span className="font-normal">Nov 2023 - April 2024</span></p>
+                            <ul className="ml-7">
+                                <li className="decoration-white list-disc" >Designed the frontend page from the ground up</li>
+                                <li className="decoration-white list-disc" >Handled all API integration</li>
+                                <li className="decoration-white list-disc" >Worked with zustand and react-query, Optizing the site performance by 40%</li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
