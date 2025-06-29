@@ -1,3 +1,5 @@
+import { slideUp } from "@/motion/variants/slideUp";
+import { motion } from "framer-motion";
 
 interface ExperienceProp {
     title: string;
@@ -8,7 +10,12 @@ interface ExperienceProp {
 }
 export const Experience = ({title, organization, start, end, remarks}: ExperienceProp) => {
     return (
-        <div className="flex gap-3">
+        <motion.div
+            variants={slideUp}
+            initial="initial"
+            whileInView="animate"
+            exit="exit"
+            className="flex gap-3">
             <div className="h-fit w-fit flex flex-col items-center">
                 <div className="animate-pulse border-primary border-4 rounded-full p-2 w-fit "></div>
                 <div className="min-h-full w-[2px] bg-primary"></div>
@@ -23,7 +30,7 @@ export const Experience = ({title, organization, start, end, remarks}: Experienc
                     ))}
                 </ul>
             </div>
-        </div>
+        </motion.div>
     )
 
 }

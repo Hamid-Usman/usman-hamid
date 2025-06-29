@@ -60,7 +60,7 @@ export default function Home() {
 
             <section className="flex flex-col min-h-fit py-8 px-2 pb-20 gap-5 sm:p-20">
                 <h3 className="text-2xl font-bold">Work Experience</h3>
-                <div className="h-full flex flex-col gap-5 justify-start">
+                <div className="h-full flex flex-col md:flex-row gap-5 justify-start">
                     <Experience 
                         title='Backend Developer'
                         organization='Pistis TechHub'
