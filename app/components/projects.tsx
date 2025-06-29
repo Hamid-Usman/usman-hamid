@@ -19,7 +19,6 @@ export const Project = ({photo, project, description, site, github, delay = 0}: 
             initial='initial'
             whileInView="animate"
             exit="exit"
-            viewport={{ once: true }}
         className="w-full h-[120vh] sm:w-fit sm:h-[530px] lg:h-[100vh] flex flex-col gap-1">
             <div className="bg-white w-full h-fit">
                 <div className="bg-primary w-20 h-1"></div>
