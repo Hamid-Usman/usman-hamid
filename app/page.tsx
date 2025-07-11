@@ -68,7 +68,7 @@ export default function Home() {
                     />
                     <Experience 
                         title='Backend Developer'
-                        organization='Pistis TechHub'
+                        organization='Pistis Tech Hub'
                         start='Nov 2023'
                         end='April 2024'
                         remarks={["Developed the endpont for projects", "Worked on the user dashboard and managed the stats and included pagination"]}
