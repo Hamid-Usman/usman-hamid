@@ -71,7 +71,7 @@ export default function Home() {
                         organization='Pistis Tech Hub'
                         start='Nov 2023'
                         end='April 2024'
-                        remarks={["Developed the endpont for projects", "Worked on the user dashboard and managed the stats and included pagination"]}
+                        remarks={["Built a RESTful API endpoint for project management, enabling seamless data retrieval and updates.", "Developed an a seamless endpoint for user dashboard with real-time statistics and paginated data for improved UX in the frontend"]}
                     />
 
                 </div>
