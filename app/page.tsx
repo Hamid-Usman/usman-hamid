@@ -45,7 +45,7 @@ export default function Home() {
                     />
                     <Project 
                         photo={foodie}
-                        project="FoodieHub"
+                        project="FoodieHub (In Progress)"
                         description= "Food delivery system to handle user orders with Paystack for testing payment integration"
                         site="https://tau-bite.vercel.app/"
                         github='https://github.com/Hamid-Usman/TauBite'
