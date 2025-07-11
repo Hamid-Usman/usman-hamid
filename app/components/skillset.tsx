@@ -1,7 +1,5 @@
 
 import { motion } from "framer-motion";
-import { slideRight } from "@/motion/variants/slideRight";
-import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 import { slideStaggered } from "@/motion/variants/slideStaggered";
 
