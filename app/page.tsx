@@ -1,6 +1,7 @@
 "use client"
 import { slideRight } from '@/motion/variants/slideRight';
 import photo from '../public/pgng.png'
+import foodie from '../public/Screenshot 2025-06-29 at 23-42-33 .png'
 import { Experience } from './components/experience';
 import { Project } from "./components/projects";
 import { motion } from 'framer-motion';
@@ -37,10 +38,18 @@ export default function Home() {
                 <div className="flex justify-center flex-wrap gap-2">
                     <Project 
                         photo={photo}
-                        project="Project Genius"
-                        description= "To foster a generation of problem solvers who address local challenges with sustainable and innovative solutions"
+                        project="Project Genius (🌟)"
+                        description= "Annual contest for problem solvers who address local challenges with sustainable and innovative solutions"
                         site="https://www.projectgenius.com.ng/"
                         delay={0.2 * 0}
+                    />
+                    <Project 
+                        photo={foodie}
+                        project="FoodieHub"
+                        description= "Food delivery system to handle user orders with Paystack for testing payment integration"
+                        site="https://tau-bite.vercel.app/"
+                        github='https://github.com/Hamid-Usman/TauBite'
+                        delay={0.2 * 1}
                     />
                 </div>
 
@@ -76,37 +85,37 @@ export default function Home() {
                     <Skillset
                         tech='Fullstack Development'
                         description='NextJS | Django REST | TypeScript | Python'
-                        // delay={0.2 * 0}
+                        delay={0.2 * 0}
                         icon={FaCode}
                     />
                     <Skillset
                         tech='AI Integration'
                         description='LangChain | Ollama | Mistral'
-                        // delay={0.2 *1}
+                        delay={0.2 *1}
                         icon={RiRobot2Fill}
                     />
                     <Skillset
                         tech='Web Scraping'
                         description='Scrapy | Selenium'
-                        // delay={0.2 * 2}
+                        delay={0.2 * 2}
                         icon={SiScrapy}
                     />
                     <Skillset
                         tech='API Documentation'
                         description='Postman'
-                        // delay={0.2 * 3}
+                        delay={0.2 * 3}
                         icon={SiPostman}
                     />
                     <Skillset
                         tech='Responsive Design'
                         description='Tailwind | FramerMotion'
-                        // delay={0.2 * 4}
+                        delay={0.2 * 4}
                         icon={SiTailwindcss}
                     />
                     <Skillset
                         tech='Hosting Services'
                         description='Supabase | Vercel | Render'
-                        // delay={0.2 * 5}
+                        delay={0.2 * 5}
                         icon={FaServer}
                     />
 
@@ -119,7 +128,7 @@ export default function Home() {
                         <IoMailUnreadSharp className='text-primary-fade' size={40}/>
                         <div className="flex flex-col gap-4">
                             <h4 className="text-xl font-bold">Email</h4>
-                            <a href="" className="">abdulhamidusman218@gmail.com</a>
+                            <a href="mailto:abdulhamidusman218@gmail.com" className="">abdulhamidusman218@gmail.com</a>
                         </div>
                     </div>
                     <div className="bg-secondary flex gap-3 items-start p-4 w-full">
@@ -136,9 +145,9 @@ export default function Home() {
                                 
                                 <h4 className="text-xl font-bold">Online Handles</h4>
                                 <div className="flex gap-3">
-                                    <a href="" className=""><FaGithub size={25}/> </a>
-                                    <a href="" className=""><FaLinkedin size={25} /></a>
-                                    <Link href="mailto:abdulhamidusman218@gmail.com" className=""><FaX size={25} /></Link>
+                                    <a href="https://github.com/Hamid-Usman/" className=""><FaGithub size={25}/> </a>
+                                    <a href="https://www.linkedin.com/in/abdulhamid-omeiza-usman/" className=""><FaLinkedin size={25} /></a>
+                                    <Link href="https://x.com/n0th4mid?s=090" className=""><FaX size={25} /></Link>
                                 </div>
                             </div>
                         </div>

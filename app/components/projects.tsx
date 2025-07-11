@@ -11,7 +11,7 @@ interface ProjectProps {
     site: string;
     github?: string;
     delay?: number
-}
+} 
 export const Project = ({photo, project, description, site, github, delay = 0}: ProjectProps) => {
     return (
         <motion.div 
@@ -30,7 +30,7 @@ export const Project = ({photo, project, description, site, github, delay = 0}: 
                     alt=""
                 />
 
-                <div className="absolute inset-0 flex gap-2 p-2 flex-col justify-end bg-gradient-to-t from-black to-transparent bg-opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                <div className="absolute inset-0 flex gap-2 p-2 flex-col justify-end bg-gradient-to-t opacity-0 from-black to-transparent bg-opacity-60 group-hover:opacity-80 transition-opacity duration-500">
                     <div className="flex gap-2">
                         <Link href={site}>View Site</Link>
                         {github && <Link href={github}>GitHub</Link>}
